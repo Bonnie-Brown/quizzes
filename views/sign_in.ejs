@@ -1,11 +1,17 @@
 <%- include('./partials/header') %>
 
 <form action="/sign_in" method ='POST'>
-    <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name= "username" value= "username" >
+    <div class="card mb-4">
+        <div class = card-body>
+         <label for="username" class="form-label" style = "color: grey;">Username</label>
+         <input type="text" class="form-control" id="username" name= "username" value= "username" placeholder = "e.g. Madam Welminster" >
+         <br>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type ="submit" class="btn btn-light me-md-2" style="color:grey" >Submit</button>
+        </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    
 </form>
 
 <%- include('./partials/footer') %>

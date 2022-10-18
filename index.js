@@ -41,8 +41,13 @@ app.use(logger('dev'))
 // Root Page
 
 app.get('/', (req, res) => {
+
+    if(req.cookies.username){
  
     res.render('home')
+    } else {
+        res.render('sign_in')
+    }
 })
 
 app.get('/sign_in', (req, res) => {

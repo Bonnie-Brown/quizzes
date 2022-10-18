@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 
     knex('clucks')
     .insert({
-        username: req.body.username,
+        username: req.cookies.username,
         content: req.body.content,
         imageUrl: req.body.imageUrl,
     })
