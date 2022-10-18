@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<h3 class = 'header'> Clucks </h3>
+
+<div>
+    <% for (let cluck of clucks) { %>
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <h5 class="username">
+                    <%- cluck.username %>
+                </h5>
+            </div>
+            <div>
+                <p class="card-text">
+                    <%- cluck.content %>
+                </p>
+            </div>
+            <div>
+                <p class="card-text">
+                    <img src="<%- cluck.imageUrl %>" alt="image">
+                </p>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="/clucks/<%- cluck.id %>">Show Cluck</a>
+        </div>
+
+        <% } %>
+
+
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %>

@@ -37,15 +37,28 @@ app.use(logger('dev'))
 
 // Routes
 
+
 // Root Page
 
 app.get('/', (req, res) => {
+ 
     res.render('home')
 })
 
-// Sign In/Out POST Requests
+app.get('/sign_in', (req, res) => {
+    res.render('sign_in')
+})
 
-// Sign In 
+// // Clucks Index Route
+
+const clucksRouter = require('./routes/clucks')
+app.use('/clucks', clucksRouter)
+
+
+
+// // Sign In/Out POST Requests
+
+// // Sign In 
 
 app.post('/sign_in', (req,res) => {
     
@@ -57,7 +70,7 @@ app.post('/sign_in', (req,res) => {
 
 // Sign Out
 
-app.post('/signout', (req, res) => {
+app.post('/sign_out', (req, res) => {
     res.clearCookie('username')
     res.redirect('/')
 })
