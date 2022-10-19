@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+
+<div class="card mb-4">
+    <div class="card-body">
+        
+        <h5 style = "color: grey;">
+            <%- cluck.username %> • <%- moment(cluck.createdAt).fromNow() %>
+        </h5>
+
+        <br>
+
+         <div>
+
+        <% if (cluck.content) { %>
+           <p class="card-text" style = "color: grey;">
+             <%- cluck.content %> 
+           </p>
+        <% } %>
+        </div>
+         <br>
+        <div>
+            <% if (cluck.imageUrl) { %>
+          <p class="card-text">
+            <img src="<%- cluck.imageUrl %>"alt="cluck image" style = "width: 40vw;">
+          </p>
+         <% } %>
+        </div>
+   
+   
+     <div class="d-flex">
+        <div class="m-3">
+            <a href="/clucks/<%-cluck.id%>/edit" class="btn btn-secondary">Edit</a>
+        </div>
+        <div class="m-3">
+            <form action="/clucks/<%-cluck.id%>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+     </div>
+    
+    </div>
+</div>
+
+<div>
+
+
+
+    <%- include('../partials/footer') %>

@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<form action="/clucks" method="POST">
+
+<div>
+    <label for="content" style = "color: grey;">Content</label>
+    <input type="text" class="form-control" name="content" placeholder="Whatchoo cluckin' 'bout?" />
+
+    <br>
+
+    <label for="imageUrl" style = "color: grey;">Image Url</label>
+    <input type="text" class="form-control" name="imageUrl" placeholder="https://i.imgur.com/qM6KaEy.gifv"/>
+
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <input type="submit" value="Cluck!" class="btn btn-light me-md-2">
+    </div>
+
+</div>
+
+</form>
+
+
+    <%- include('../partials/footer') %>
