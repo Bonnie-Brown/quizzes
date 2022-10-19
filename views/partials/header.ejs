@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clucker</title>
 
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src ="../css/stylesheets/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src ="/css/stylesheets/bootstrap.bundle.min.js"></script>
 
 </head>
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"> <img src="../css/images/cluck.jpeg" alt="clucker" width="55" height="50">
+        <a class="navbar-brand" href="/"> <img src="/images/cluck.jpeg" alt="clucker" width="55" height="50">
 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,7 +26,7 @@
             <ul class="navbar-nav">
                 <% if (username) { %>
                 <li class = "nav-item active">
-                    <a type="submit" class='nav-link btn btn-secondary' href ="/clucks/new">Cluck!</a>
+                    <a type="submit" class='btn btn-secondary' href ="/clucks/new">Cluck!</a>
                 </li>
                 <% } %>
             
@@ -43,7 +43,7 @@
                 <% } else { %>
                  <li class="nav-item active">
                             
-                 <a class="nav-link" href="/sign_in">Sign In</a>
+                 <a class="btn btn-secondary" href="/sign_in">Sign In</a>
                             
                 </li>
                 <% } %>

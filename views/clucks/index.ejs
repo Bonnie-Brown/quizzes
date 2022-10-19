@@ -1,28 +1,46 @@
 <%- include('../partials/header') %>
 
-<h3 class = 'header'> Clucks </h3>
+<h3 class = 'header' style = "color: grey;"> Clucks </h3>
 
 <div>
     <% for (let cluck of clucks) { %>
         <div class="card mb-4">
             <div class="card-body">
 
-                <h5 class="username">
-                    <%- cluck.username %>
+                <% if (cluck.avatarUrl){ %>
+
+                <h5 class="username" style="color:grey">
+                    <img src="<%- cluck.avatarUrl %>" alt="avatar" class = "img-thumbnail">  <%- cluck.username %> • <%- moment(cluck.createdAt).fromNow() %>
                 </h5>
+
+             <% } else { %>
+
+                <h5 class="username" style = "color: grey;">
+                    <img src="/images/placeholder.jpeg" alt="placeholder" class="img-thumbnail">
+                    <%- cluck.username %> • <%- moment(cluck.createdAt).fromNow() %>
+                </h5>
+
+             <% } %>
             </div>
             <div>
-                <p class="card-text">
+                <% if (cluck.content) { %>
+                <p class="card-text" style = "color: grey;">
                     <%- cluck.content %>
                 </p>
-            </div>
-            <div>
-                <p class="card-text">
-                    <img src="<%- cluck.imageUrl %>" alt="image">
-                </p>
+            <% } %>
             </div>
             <br>
-            <a class="btn btn-primary" href="/clucks/<%- cluck.id %>">Show Cluck</a>
+            <div>
+                <% if (cluck.imageUrl) { %>
+                <p class="card-text">
+                    <img src="<%- cluck.imageUrl %>" alt="image" style = "width: 30vw;">
+                </p>
+            <% } %>
+            </div>
+            <br>
+            <a class="btn btn-secondary" href="/clucks/<%- cluck.id %>">Show Cluck</a>
+
+       
         </div>
 
         <% } %>

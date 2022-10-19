@@ -1,3 +1,7 @@
 .navbar-nav {
     margin-left: auto;
 }
+
+.img-thumbnail {
+    width: 5vw;
+}

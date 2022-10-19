@@ -1,0 +1,25 @@
+<%- include("../partials/header.ejs") %>
+
+    <h3 class="header" style = "color: grey;"> Edit Cluck </h3>
+
+    <form action="/clucks/<%- cluck.id %>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+
+        <div>
+
+            <textarea class="form-control" name="content" style = "color: grey;" value="<%- cluck.content %>"><%- cluck.content %></textarea>
+
+            <br>
+
+            <input type="text" class="form-control" name="imageUrl" style = "color: grey;" value="<%- cluck.imageUrl %>" />
+
+        </div>
+
+        <br>
+
+        <input type="submit" class="btn btn-secondary" value="Update">
+
+    </form>
+
+
+    <%- include("../partials/footer.ejs") %>
